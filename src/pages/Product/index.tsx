@@ -1,9 +1,11 @@
-function Main() {
-	return (
-		<div className="App">
-			<header className="App-header"></header>
-		</div>
-	);
+import ProductDetails from "../../components/ProductDetails";
+
+function ProductDetailPage() {
+  return (
+    <div className="App">
+      <ProductDetails />
+    </div>
+  );
 }
 
-export default Main;
+export default ProductDetailPage;

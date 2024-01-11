@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import "./style.css";
+
 import ProductCard from "../../components/ProductCard";
 import { Product } from "../../types/produto";
 

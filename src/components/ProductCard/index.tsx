@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Product } from "../../types/produto";
 import "./style.css";
 
@@ -29,15 +30,27 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div className="product-card">
-      <img src={image} alt={title} className="product-image" />
+      <Link to={`/products/${product.id}`}>
+        <img src={image} alt={title} className="product-image" />
+      </Link>
       <div className="product-details">
         <h2 className="product-title">{title}</h2>
         <p className="product-description">{description}</p>
-        <p className="product-price">R$ {price}</p>
-        <div className="cart-actions">
-          <button onClick={handleRemoveFromCart}>-</button>
-          <span>{quantity}</span>
-          <button onClick={handleAddToCart}>+</button>
+        <div className="actions">
+          <p className="product-price">R$ {price}</p>
+          <div className="cart-actions">
+            <button
+              className="minus-btn"
+              onClick={handleRemoveFromCart}
+              disabled={quantity === 0}
+            >
+              -
+            </button>
+            <span className="quantity">{quantity}</span>
+            <button className="quantity-btn" onClick={handleAddToCart}>
+              +
+            </button>
+          </div>
         </div>
       </div>
     </div>
