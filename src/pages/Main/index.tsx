@@ -66,25 +66,33 @@ function Main() {
   return (
     <div>
       <header>
-        <h1>Tela de Produtos</h1>
-        <p>Total: R$ {totalPrice.toFixed(2)}</p>
+        <div className="header">
+          <h1>Tela de Produtos</h1>
+          <p>Total: R$ {totalPrice.toFixed(2)}</p>
+        </div>
       </header>
       <div className="products-page">
-        <div className="product-list">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onAddToCart={addToCart}
-              onRemoveFromCart={removeFromCart}
-            />
-          ))}
-        </div>
-        <div className="cart-summary">
-          <h2>Resumo do Carrinho</h2>
-          <p>Total: R$ {totalPrice.toFixed(2)}</p>
-          <button>Checkout</button>
-        </div>
+        {products.length > 0 ? (
+          <>
+            <div className="product-list">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAddToCart={addToCart}
+                  onRemoveFromCart={removeFromCart}
+                />
+              ))}
+            </div>
+            <div className="cart-summary">
+              <h2>Resumo do Carrinho</h2>
+              <p>Total: R$ {totalPrice.toFixed(2)}</p>
+              <button>Checkout</button>
+            </div>
+          </>
+        ) : (
+          <p>Carregando...</p>
+        )}
       </div>
     </div>
   );
