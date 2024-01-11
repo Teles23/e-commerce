@@ -4,6 +4,7 @@ import "./style.css";
 
 import ProductCard from "../../components/ProductCard";
 import { Product } from "../../types/produto";
+import { Link } from "react-router-dom";
 
 interface CartItem {
   productId: number;
@@ -87,7 +88,10 @@ function Main() {
             <div className="cart-summary">
               <h2>Resumo do Carrinho</h2>
               <p>Total: R$ {totalPrice.toFixed(2)}</p>
-              <button>Checkout</button>
+              <Link to="/checkout">
+                {" "}
+                <button>Checkout</button>
+              </Link>
             </div>
           </>
         ) : (
