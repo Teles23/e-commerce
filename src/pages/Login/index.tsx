@@ -6,13 +6,7 @@ function LoginPage() {
 	const { login, password, setLogin, setPassword } = useAuth();
 
 	return (
-		<div
-			style={{
-				backgroundImage: 'url("caminho-para-imagem-de-fundo.jpg")',
-				backgroundSize: "cover",
-				height: "100vh",
-			}}
-		>
+		<div className="container">
 			<h1>Seja bem-vindo ao E-commerce</h1>
 			<LoginForm
 				login={login}
