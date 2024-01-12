@@ -1,11 +1,8 @@
 import { createContext } from "react";
 import useGlobalProvider from "../hooks/useGlobalProvider";
 import { GlobalChildren } from "../types/globalProps";
-export type GlobalContextProps = {
-	token: string;
-	setToken: React.Dispatch<React.SetStateAction<string | undefined>>;
-	removeToken: () => void;
-};
+
+export type GlobalContextProps = ReturnType<typeof useGlobalProvider>;
 
 const GlobalContext = createContext<GlobalContextProps | undefined>(undefined);
 

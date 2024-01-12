@@ -17,7 +17,7 @@ const LoginForm: React.FC<AuthContextProps> = ({
 
 		if (isFormValid) {
 			setToken("true");
-			navigate("/products");
+			navigate("products");
 		}
 	};
 

@@ -1,20 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import api from "../../services/api";
 import "./style.css";
 
-import ProductCard from "../../components/ProductCard";
-import { Product } from "../../types/product";
 import { Link } from "react-router-dom";
-
-interface CartItem {
-	productId: number;
-	quantity: number;
-}
+import ProductCard from "../../components/ProductCard";
+import useGlobal from "../../hooks/useGlobal";
+import { Product } from "../../types/product";
 
 function Main() {
-	const [products, setProducts] = useState<Product[]>([]);
-	const [cart, setCart] = useState<CartItem[]>([]);
-	const [totalPrice, setTotalPrice] = useState(0);
+	const { setProducts, products, cart, setCart, setTotalPrice, totalPrice } =
+		useGlobal();
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -27,20 +22,34 @@ function Main() {
 		};
 
 		fetchData();
-	}, []);
+	}, [setProducts]);
 
 	const addToCart = (productId: number) => {
-		const existingItem = cart.find((item) => item.productId === productId);
+		const productToAdd = products.find((product) => product.id === productId);
 
-		if (existingItem) {
-			const updatedCart = cart.map((item) =>
-				item.productId === productId
-					? { ...item, quantity: item.quantity + 1 }
-					: item
+		if (productToAdd) {
+			const existingItem = cart.find(
+				(item) => item.productId === productToAdd.id
 			);
-			setCart(updatedCart);
-		} else {
-			setCart([...cart, { productId, quantity: 1 }]);
+
+			if (existingItem) {
+				const updatedCart = cart.map((item) =>
+					item.productId === productToAdd.id
+						? { ...item, quantity: item.quantity + 1 }
+						: item
+				);
+				setCart(updatedCart);
+			} else {
+				setCart([
+					...cart,
+					{
+						productId: productToAdd.id,
+						price: productToAdd.price,
+						title: productToAdd.title,
+						quantity: 1,
+					},
+				]);
+			}
 		}
 	};
 
@@ -62,7 +71,7 @@ function Main() {
 			return acc;
 		}, 0);
 		setTotalPrice(totalPrice);
-	}, [cart, products]);
+	}, [cart, products, setTotalPrice]);
 
 	return (
 		<div>
