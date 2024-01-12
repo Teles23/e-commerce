@@ -1,5 +1,5 @@
 import LoginForm from "../../components/LoginForm";
-import useAuth from "../../hooks/HookLogin/useAuth";
+import useAuth from "../../hooks/useAuth";
 import "./style.css";
 
 function LoginPage() {
