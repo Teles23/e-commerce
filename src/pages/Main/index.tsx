@@ -74,7 +74,7 @@ function Main() {
 	}, [cart, products, setTotalPrice]);
 
 	return (
-		<div>
+		<div className="container-app">
 			<header>
 				<div className="header">
 					<h1>Tela de Produtos</h1>

@@ -22,46 +22,48 @@ const CheckoutPage: React.FC = () => {
 	};
 
 	return (
-		<div>
-			<h1>Tela de Checkout</h1>
-
+		<div className="container-app">
 			<div>
-				<h2>Itens no Carrinho:</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Título</th>
-							<th>Quantidade</th>
-							<th>Preço Unitário</th>
-							<th>Total</th>
-							<th>Ações</th>
-						</tr>
-					</thead>
-					<tbody>
-						{cart.map((item, index) => (
-							<tr key={item.productId}>
-								<td>{item.title}</td>
-								<td>{item.quantity}</td>
-								<td>R$ {item.price.toFixed(2)}</td>
-								<td>R$ {(item.quantity * item.price).toFixed(2)}</td>
-								<td>
-									<button onClick={() => handleRemoveItem(index)}>
-										Remover
-									</button>
-								</td>
-							</tr>
-						))}
-					</tbody>
-					<tfoot>
-						<tr>
-							<td colSpan={4}>Total</td>
-							<td>R$ {totalPrice.toFixed(2)}</td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
+				<h1>Tela de Checkout</h1>
 
-			<button onClick={handleClick}>Voltar para Produtos</button>
+				<div>
+					<h2>Itens no Carrinho:</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Título</th>
+								<th>Quantidade</th>
+								<th>Preço Unitário</th>
+								<th>Total</th>
+								<th>Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							{cart.map((item, index) => (
+								<tr key={item.productId}>
+									<td>{item.title}</td>
+									<td>{item.quantity}</td>
+									<td>R$ {item.price.toFixed(2)}</td>
+									<td>R$ {(item.quantity * item.price).toFixed(2)}</td>
+									<td>
+										<button onClick={() => handleRemoveItem(index)}>
+											Remover
+										</button>
+									</td>
+								</tr>
+							))}
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colSpan={4}>Total</td>
+								<td>R$ {totalPrice.toFixed(2)}</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<button onClick={handleClick}>Voltar para Produtos</button>
+			</div>
 		</div>
 	);
 };
