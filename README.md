@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Projeto Fake Store - E-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Visão Geral
 
-## Available Scripts
+Este projeto é uma aplicação de comércio eletrônico desenvolvida com React e TypeScript, utilizando a [Fake Store API](https://fakestoreapi.com/products) para simular dados de produtos. Inclui recursos como autenticação de usuário, navegação de produtos, informações detalhadas do produto e um processo de checkout.
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+### 1. Autenticação de Usuário
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Acesse a página de login na rota raiz ("/").
+- Insira seu email e senha nos campos de input correspondentes.
+- O formulário de login só é válido com um email válido e uma senha de 8 ou mais caracteres.
+- O botão de envio é desativado se o formulário for inválido.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2. Listagem de Produtos
 
-### `npm test`
+- Navegue até a rota "/products" para visualizar uma lista de produtos obtidos da Fake Store API.
+- Cada produto é exibido com sua imagem, nome e preço.
+- As categorias são fornecidas como botões de filtro.
+- Adicione produtos ao carrinho usando o botão "+".
+- Cada card de produto permite ajustar a quantidade de itens e exibe o preço total.
+- O botão de checkout redireciona para a rota "/checkout".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Detalhes do Produto
 
-### `npm run build`
+- Clique em um card de produto para navegar até a visualização detalhada do produto ("/products/:id").
+- Obtenha informações detalhadas do produto da API com base no ID do produto fornecido.
+- Exiba a imagem, nome, preço, descrição e avaliação do produto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. Checkout
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Acesse a página de checkout na rota "/checkout".
+- Visualize todos os itens no carrinho com preço unitário, quantidade e preço total.
+- Cada item no carrinho possui um botão de exclusão para removê-lo da lista e atualizar o preço total.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Como Usar
 
-### `npm run eject`
+1. Clone o repositório: `git clone https://github.com/Teles23/e-commerce`
+2. Navegue até a pasta do projeto: `cd e-commerce`
+3. Instale as dependências: `npm install`
+4. Inicie o servidor de desenvolvimento: `npm start`
+5. Abra seu navegador e vá para [http://localhost:3000](http://localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Exemplos de Requisições
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- API para todos os produtos: [https://fakestoreapi.com/products](https://fakestoreapi.com/products)
+- API para um produto por ID: [https://fakestoreapi.com/products/1](https://fakestoreapi.com/products/1)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## TypeScript e Aprendizado
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Este projeto foi desenvolvido utilizando TypeScript junto com React, proporcionando uma tipagem mais robusta e ajudando na detecção de erros durante o desenvolvimento.
+- A dificuldade encontrada durante o projeto incluiu questões relacionadas à manipulação de estados, especialmente quando se tratava de gerenciar o carrinho de compras e a quantidade de itens.
+- Aprendizado significativo ocorreu na prática de utilização do React Router para a navegação entre páginas e na integração de dados provenientes de uma API externa.
+- A experiência proporcionou uma compreensão mais aprofundada sobre a construção de interfaces de usuário dinâmicas e interativas, bem como a importância do estado global para compartilhar dados entre componentes.
 
-## Learn More
+## Observações
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Durante o desenvolvimento, enfrente dificuldades específicas na manipulação de estados relacionados ao carrinho de compras.
+- O aprendizado incluiu a prática do React Router para navegação eficiente entre páginas e integração de dados de uma API externa.
+- Foi realizada a implantação do projeto usando Netlify, e o site está disponível [aqui](https://ecommerce-unifel.netlify.app/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Sinta-se à vontade para explorar a aplicação, adicionar produtos ao carrinho e experimentar o processo de checkout!
