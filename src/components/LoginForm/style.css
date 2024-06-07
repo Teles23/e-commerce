@@ -27,7 +27,7 @@
 	text-align: left;
 	width: 100%;
 }
-
+/*
 .form-input {
 	width: calc(100% - 20px);
 	padding: 12px;
@@ -36,6 +36,13 @@
 	border-radius: 5px;
 	display: block;
 	margin: 0 auto;
+}*/
+.form-input {
+	width: calc(100% - 22px); /* Ajuste a largura para compensar o padding */
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 .form-button {
