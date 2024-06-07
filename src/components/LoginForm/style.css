@@ -1,35 +1,48 @@
-/* style.css */
-
+/* Estilo principal */
 .form-container {
-	background-color: rgba(255, 255, 255, 0.8);
-	padding: 20px;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 40px;
+	border-radius: 15px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 	text-align: center;
+	margin: 50px auto;
 }
 
 .form-title {
-	font-size: 24px;
+	font-size: 2.5rem;
+	margin-bottom: 30px;
+	color: #333;
+	border-bottom: 2px solid #ccc;
+	display: inline-block;
+	padding-bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.form-label {
+	display: block;
 	margin-bottom: 20px;
+	font-size: 1.2rem;
+	color: #555;
+	text-align: left;
+	width: 100%;
 }
 
 .form-input {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 15px;
+	width: calc(100% - 20px);
+	padding: 12px;
+	margin-top: 5px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
+	display: block;
+	margin: 0 auto;
 }
 
 .form-button {
 	background-color: #4caf50;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
+	font-size: 1rem;
 	transition: background-color 0.3s, cursor 0.3s;
+	margin-top: 25px;
 }
 
 .form-button:disabled {
@@ -39,5 +52,58 @@
 
 .form-button:hover:not([disabled]) {
 	background-color: #45a049;
-	cursor: pointer;
+}
+
+/* Media queries para tablets */
+@media (max-width: 768px) {
+	.form-container {
+		padding: 30px;
+		margin: 30px auto;
+	}
+
+	.form-title {
+		font-size: 2rem;
+	}
+
+	.form-label {
+		font-size: 1rem;
+	}
+
+	.form-input {
+		padding: 10px;
+		width: calc(100% - 20px);
+	}
+
+	.form-button {
+		padding: 10px 20px;
+		font-size: 0.9rem;
+	}
+}
+
+/* Media queries para celulares */
+@media (max-width: 480px) {
+	.form-container {
+		padding: 20px;
+		margin: 20px auto;
+	}
+
+	.form-title {
+		font-size: 1.8rem;
+		text-align: center;
+		width: 100%;
+	}
+
+	.form-label {
+		font-size: 0.9rem;
+	}
+
+	.form-input {
+		padding: 8px;
+		width: calc(100% - 16px);
+	}
+
+	.form-button {
+		padding: 8px 16px;
+		font-size: 0.8rem;
+	}
 }

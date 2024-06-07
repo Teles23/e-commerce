@@ -25,9 +25,9 @@ const LoginForm: React.FC<AuthContextProps> = ({
 
 	return (
 		<div className="form-container">
-			<h1 className="form-title">Login</h1>
-			<form onSubmit={handleSubmit}>
-				<label>
+			<h1 className="form-title">Bem-vindo</h1>
+			<form onSubmit={handleSubmit} className="login-form">
+				<label className="form-label">
 					Email:
 					<input
 						className="form-input"
@@ -36,8 +36,7 @@ const LoginForm: React.FC<AuthContextProps> = ({
 						onChange={(e) => setLogin(e.target.value)}
 					/>
 				</label>
-				<br />
-				<label>
+				<label className="form-label">
 					Password:
 					<input
 						className="form-input"
@@ -46,7 +45,6 @@ const LoginForm: React.FC<AuthContextProps> = ({
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</label>
-				<br />
 				<button className="form-button" type="submit" disabled={!isFormValid}>
 					Login
 				</button>

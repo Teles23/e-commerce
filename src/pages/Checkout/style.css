@@ -1,3 +1,24 @@
+/* Container da tela de checkout */
+.checkout-container {
+	width: 100%;
+	max-width: 800px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.checkout-title {
+	font-size: 2rem;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: center;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 10px;
+}
+
+/* Estilo padrão para desktop */
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -15,37 +36,92 @@ th {
 	background-color: #f2f2f2;
 }
 
-button {
+.btn-remove,
+.btn-voltar {
 	background-color: #dc3545;
-	color: #fff;
-	border: none;
-	padding: 8px;
-	cursor: pointer;
 }
 
-button:hover {
+.btn-remove:hover,
+.btn-voltar:hover {
 	background-color: #c82333;
-}
-
-button.back-btn {
-	background-color: #007bff;
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	cursor: pointer;
-	margin-top: 20px;
-}
-
-button.back-btn:hover {
-	background-color: #0056b3;
 }
 
 tfoot td {
 	font-weight: bold;
 }
 
+/* Media queries para tablets */
 @media (max-width: 768px) {
+	.container-app {
+		padding: 10px;
+	}
+
+	.container-app > div {
+		width: 100%;
+		max-width: 100%;
+	}
+
 	table {
+		display: block;
+		width: 100%;
 		overflow-x: auto;
+		margin: 10px 0;
+	}
+
+	th,
+	td {
+		white-space: nowrap;
+		padding: 8px;
+		font-size: 14px;
+	}
+
+	.btn-remove,
+	.btn-voltar {
+		width: 100%;
+		padding: 8px;
+		font-size: 14px;
+	}
+
+	.checkout-title {
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+	}
+}
+
+/* Media queries para celulares */
+@media (max-width: 480px) {
+	.container-app {
+		padding: 5px;
+	}
+
+	.container-app > div {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	table {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		margin: 5px 0;
+	}
+
+	th,
+	td {
+		white-space: nowrap;
+		padding: 6px;
+		font-size: 12px;
+	}
+
+	.btn-remove,
+	.btn-voltar {
+		width: 100%;
+		padding: 6px;
+		font-size: 12px;
+	}
+
+	.checkout-title {
+		font-size: 1.2rem;
+		margin-bottom: 10px;
 	}
 }

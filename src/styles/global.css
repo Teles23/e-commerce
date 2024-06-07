@@ -12,6 +12,16 @@ body {
 		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
 		sans-serif;
 }
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 1rem 2rem;
+	position: fixed;
+	width: 100%;
+	height: 65px;
+	top: 0;
+	z-index: 1;
+}
 .container-app {
 	background-color: #f8f9fa;
 	color: #333;
@@ -19,8 +29,67 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	padding: 20px; /* Adicionado padding para espaçamento */
 }
+
+/* Media queries para tablets */
+@media (max-width: 768px) {
+	.container-app {
+		padding: 10px; /* Reduz o padding em tablets */
+	}
+
+	.container-app > div {
+		width: 100%; /* Garante que o conteúdo ocupe toda a largura */
+		max-width: 100%; /* Remove qualquer limite de largura máximo */
+	}
+}
+
+/* Media queries para celulares */
+@media (max-width: 480px) {
+	.container-app {
+		padding: 5px; /* Reduz ainda mais o padding em celulares */
+	}
+
+	.container-app > div {
+		width: 100%; /* Garante que o conteúdo ocupe toda a largura */
+		max-width: 100%; /* Remove qualquer limite de largura máximo */
+	}
+}
+
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
+}
+button {
+	padding: 10px 20px;
+	border: none;
+	color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	header {
+		height: auto;
+		padding: 1rem;
+	}
+	button {
+		width: 100%;
+		padding: 8px;
+		font-size: 14px;
+	}
+}
+/* Media queries para celulares */
+@media (max-width: 480px) {
+	header {
+		height: auto;
+		padding: 0.5rem;
+	}
+
+	button {
+		width: 100%;
+		padding: 6px;
+		font-size: 12px;
+	}
 }

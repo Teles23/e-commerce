@@ -23,10 +23,9 @@ const CheckoutPage: React.FC = () => {
 
 	return (
 		<div className="container-app">
-			<div>
-				<h1>Tela de Checkout</h1>
-
-				<div>
+			<div className="checkout-container">
+				<h1 className="checkout-title">Tela de Checkout</h1>
+				<div className="cart-items">
 					<h2>Itens no Carrinho:</h2>
 					<table>
 						<thead>
@@ -46,7 +45,10 @@ const CheckoutPage: React.FC = () => {
 									<td>R$ {item.price.toFixed(2)}</td>
 									<td>R$ {(item.quantity * item.price).toFixed(2)}</td>
 									<td>
-										<button onClick={() => handleRemoveItem(index)}>
+										<button
+											className="btn-remove"
+											onClick={() => handleRemoveItem(index)}
+										>
 											Remover
 										</button>
 									</td>
@@ -61,8 +63,9 @@ const CheckoutPage: React.FC = () => {
 						</tfoot>
 					</table>
 				</div>
-
-				<button onClick={handleClick}>Voltar para Produtos</button>
+				<button className="btn-voltar" onClick={handleClick}>
+					Voltar para Produtos
+				</button>
 			</div>
 		</div>
 	);
