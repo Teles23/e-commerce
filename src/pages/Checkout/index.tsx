@@ -19,6 +19,10 @@ const CheckoutPage: React.FC = () => {
 
 		setCart(updatedCart);
 		setTotalPrice(updatedTotalPrice);
+                setQuantities((prev) => ({
+                        ...prev,
+                        [removedItem.productId]: prev[removedItem.productId] - removedItem.quantity
+   }));
 	};
 
 	return (
