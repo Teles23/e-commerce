@@ -16,6 +16,8 @@ function Main() {
 		setTotalPrice,
 		totalPrice,
 		removeToken,
+		setQuantities,
+		quantities,
 	} = useGlobal();
 	const navigate = useNavigate();
 
@@ -58,6 +60,10 @@ function Main() {
 					},
 				]);
 			}
+			setQuantities((prev) => ({
+				...prev,
+				[productId]: (prev[productId] || 0) + 1,
+			}));
 		}
 	};
 
@@ -68,6 +74,10 @@ function Main() {
 				: item
 		);
 		setCart(updatedCart.filter((item) => item.quantity > 0));
+		setQuantities((prev) => ({
+			...prev,
+			[productId]: prev[productId] - 1,
+		}));
 	};
 	const handleLogout = () => {
 		removeToken();
@@ -106,6 +116,7 @@ function Main() {
 									product={product}
 									onAddToCart={addToCart}
 									onRemoveFromCart={removeFromCart}
+									quantity={quantities[product.id] || 0}
 								/>
 							))}
 						</div>

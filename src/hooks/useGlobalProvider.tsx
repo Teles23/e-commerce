@@ -8,6 +8,7 @@ function useGlobalProvider() {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [cart, setCart] = useState<CartItem[]>([]);
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
 
 	return {
 		token: token || "",
@@ -19,6 +20,8 @@ function useGlobalProvider() {
 		setCart,
 		totalPrice,
 		setTotalPrice,
+		quantities,
+		setQuantities,
 	};
 }
 

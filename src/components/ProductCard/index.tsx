@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Product } from "../../types/product";
 import "./style.css";
@@ -7,24 +6,23 @@ interface ProductCardProps {
 	product: Product;
 	onAddToCart: (productId: number) => void;
 	onRemoveFromCart: (productId: number) => void;
+	quantity: number;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
 	product,
 	onAddToCart,
 	onRemoveFromCart,
+	quantity,
 }) => {
 	const { id, title, price, description, image } = product;
-	const [quantity, setQuantity] = useState(0);
 
 	const handleAddToCart = () => {
 		onAddToCart(id);
-		setQuantity((prevQuantity) => prevQuantity + 1);
 	};
 	const handleRemoveFromCart = () => {
 		if (quantity > 0) {
 			onRemoveFromCart(id);
-			setQuantity((prevQuantity) => prevQuantity - 1);
 		}
 	};
 

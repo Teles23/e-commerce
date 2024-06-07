@@ -7,7 +7,7 @@ function LoginPage() {
 
 	return (
 		<div className="container">
-			<h1>Seja bem-vindo ao E-commerce</h1>
+			<h1 className="welcome-title">Seja bem-vindo ao E-commerce</h1>
 			<LoginForm
 				login={login}
 				password={password}

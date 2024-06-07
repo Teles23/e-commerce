@@ -1,48 +1,46 @@
 /* Estilo principal */
 .form-container {
-	background-color: rgba(255, 255, 255, 0.9);
-	padding: 40px;
-	border-radius: 15px;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-	text-align: center;
-	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: auto;
+	color: #fff;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: auto;
+	max-width: 100%;
+}
+
+.form-input {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 .form-title {
-	font-size: 2.5rem;
-	margin-bottom: 30px;
-	color: #333;
-	border-bottom: 2px solid #ccc;
-	display: inline-block;
-	padding-bottom: 10px;
-	width: 100%;
-	text-align: center;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
 }
 
 .form-label {
-	display: block;
 	margin-bottom: 20px;
 	font-size: 1.2rem;
-	color: #555;
 	text-align: left;
-	width: 100%;
-}
-/*
-.form-input {
-	width: calc(100% - 20px);
-	padding: 12px;
-	margin-top: 5px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	display: block;
-	margin: 0 auto;
-}*/
-.form-input {
-	width: calc(100% - 22px); /* Ajuste a largura para compensar o padding */
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+	width: 22vw;
 }
 
 .form-button {
@@ -74,6 +72,7 @@
 
 	.form-label {
 		font-size: 1rem;
+		width: 50vw;
 	}
 
 	.form-input {
@@ -83,7 +82,7 @@
 
 	.form-button {
 		padding: 10px 20px;
-		font-size: 0.9rem;
+		font-size: 1.5rem;
 	}
 }
 
@@ -102,6 +101,7 @@
 
 	.form-label {
 		font-size: 0.9rem;
+		width: 85vw;
 	}
 
 	.form-input {
@@ -111,6 +111,6 @@
 
 	.form-button {
 		padding: 8px 16px;
-		font-size: 0.8rem;
+		font-size: 1.2rem;
 	}
 }
