@@ -2,14 +2,22 @@ import { useEffect } from "react";
 import api from "../../services/api";
 import "./style.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ProductCard from "../../components/ProductCard";
 import useGlobal from "../../hooks/useGlobal";
 import { Product } from "../../types/product";
 
 function Main() {
-	const { setProducts, products, cart, setCart, setTotalPrice, totalPrice } =
-		useGlobal();
+	const {
+		setProducts,
+		products,
+		cart,
+		setCart,
+		setTotalPrice,
+		totalPrice,
+		removeToken,
+	} = useGlobal();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -61,6 +69,10 @@ function Main() {
 		);
 		setCart(updatedCart.filter((item) => item.quantity > 0));
 	};
+	const handleLogout = () => {
+		removeToken();
+		navigate("/sign-in");
+	};
 
 	useEffect(() => {
 		const totalPrice = cart.reduce((acc, item) => {
@@ -79,6 +91,9 @@ function Main() {
 				<div className="header">
 					<h1>Tela de Produtos</h1>
 					<p>Total: R$ {totalPrice.toFixed(2)}</p>
+					<button className="btn-sair" onClick={handleLogout}>
+						Sair
+					</button>
 				</div>
 			</header>
 			<div className="products-page">
@@ -98,7 +113,6 @@ function Main() {
 							<h2>Resumo do Carrinho</h2>
 							<p>Total: R$ {totalPrice.toFixed(2)}</p>
 							<Link to="/checkout">
-								{" "}
 								<button>Checkout</button>
 							</Link>
 						</div>
