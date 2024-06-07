@@ -34,6 +34,7 @@ const LoginForm: React.FC<AuthContextProps> = ({
 						type="email"
 						value={login}
 						onChange={(e) => setLogin(e.target.value)}
+placeholder="Digite seu email"
 					/>
 				</label>
 				<label className="form-label">
@@ -42,6 +43,7 @@ const LoginForm: React.FC<AuthContextProps> = ({
 						className="form-input"
 						type="password"
 						value={password}
+placeholder="Digite uma senha de pelo menos 8 caracteres"
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</label>
