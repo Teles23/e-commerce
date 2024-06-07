@@ -4,7 +4,7 @@ import useGlobal from "../../hooks/useGlobal";
 import "./style.css";
 
 const CheckoutPage: React.FC = () => {
-	const { cart, totalPrice, setCart, setTotalPrice,setQuantities,quantities } = useGlobal();
+	const { cart, totalPrice, setCart, setTotalPrice,setQuantities } = useGlobal();
 	const navigate = useNavigate();
 
 	const handleClick = () => {
