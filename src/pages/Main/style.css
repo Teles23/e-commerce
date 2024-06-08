@@ -79,6 +79,10 @@
 		height: auto;
 		padding: 1rem;
 	}
+	.header-details {
+		width: 100%;
+		justify-content: space-around;
+	}
 
 	.btn-sair {
 		align-self: flex-end;

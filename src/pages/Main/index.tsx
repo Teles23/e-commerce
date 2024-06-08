@@ -1,11 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
-import api from "../../services/api";
-import "./style.css";
-
 import { Link, useNavigate } from "react-router-dom";
 import ProductCard from "../../components/ProductCard";
 import useGlobal from "../../hooks/useGlobal";
+import api from "../../services/api";
 import { Product } from "../../types/product";
+import "./style.css";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 function Main() {
 	const {
@@ -100,10 +101,18 @@ function Main() {
 			<header>
 				<div className="header">
 					<h1>Tela de Produtos</h1>
-					<p>Total: R$ {totalPrice.toFixed(2)}</p>
-					<button className="btn-sair" onClick={handleLogout}>
-						Sair
-					</button>
+					<div
+						className="header-details"
+						style={{ display: "flex", gap: "10px" }}
+					>
+						<p>Total: R$ {totalPrice.toFixed(2)}</p>
+						<Link to={"/checkout"} style={{ color: "cornflowerblue" }}>
+							<FontAwesomeIcon icon={faCartShopping} />
+						</Link>
+						<button className="btn-sair" onClick={handleLogout}>
+							Sair
+						</button>
+					</div>
 				</div>
 			</header>
 			<div className="products-page">
