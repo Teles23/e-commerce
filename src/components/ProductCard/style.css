@@ -75,7 +75,7 @@
 /* Para tablets */
 @media (max-width: 768px) {
 	.product-card {
-		width: 45%;
+		width: 100%;
 	}
 }
 
