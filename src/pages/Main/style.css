@@ -83,6 +83,18 @@
 		width: 100%;
 		justify-content: space-around;
 	}
+	.header-details {
+		a {
+			font-size: 3.1rem;
+			align-self: flex-end;
+		}
+		p {
+			align-self: center;
+		}
+		.btn-sair {
+			width: 50%;
+		}
+	}
 
 	.btn-sair {
 		align-self: flex-end;
